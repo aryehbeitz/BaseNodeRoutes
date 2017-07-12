@@ -1,0 +1,15 @@
+{
+  "name": "nodejsroutes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-router": "^0.1.5",
+    "request": "^2.81.0"
+  }
+}
