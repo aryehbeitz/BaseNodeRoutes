@@ -6,7 +6,7 @@ var router = Router();    // create a new Router instance
 var route = router.push;  // shortcut for router.push() 
  
 /*Add routes*/
-route('GET', '/joke', jokesHandler);         // handle any request to /hello 
+route('GET', '/joke', jokesHandler);         // handle any request to /joke 
  
 // handle all GET and POST requests to /one and /two 
 // route('GET', 'POST', '/one', '/two', routeHandler);
