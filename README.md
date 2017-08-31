@@ -10,10 +10,10 @@ Navigate to localhost:3000/joke to see a Chuck Norris joke
 
 ### Api Documentation
 
-1. Get Stock News (single stock or seperated by commas). At the moment, all stocks are assumed to be from the NASDAQ stock market
+1. Get Stock News (single stock or seperated by commas).
 
 ```
-GET /v1/news/AAPL,TWTR
+GET /v1/news/NASDAQ:AAPL,NASDAQ:TWTR
 ```
 
 Expected Result
@@ -63,10 +63,11 @@ Expected Result
   }
 ```
 
-2. Historical Data for single stock (in format: symbol/start_date/end_date, with date in YYYY/MM/DD format). The stock symbol is assumed to be on NASDAQ.
+
+2. Historical Data for single stock (in format: symbol(s)/start_date/end_date, with date in YYYY-MM-DD format).
 
 ```
-GET /v1/historical/AAPL/2014-01-02/2014-01-03
+GET /v1/historical/NASDAQ:AAPL,NASDAQ:AIG/2014-01-02/2014-01-03
 ```
 
 Yields Response:
