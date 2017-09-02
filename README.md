@@ -186,7 +186,7 @@ Yields Response:
     "high": 79.099998,
     "low": 77.204285,
     "close": 77.28286,
-    "adjClose": "71.907555",
+    "adjClose": 71.907555,
     "volume": 98116900,
     "symbol": "AAPL"
   },
@@ -196,7 +196,7 @@ Yields Response:
     "high": 79.575714,
     "low": 78.860001,
     "close": 79.01857,
-    "adjClose": "73.522530",
+    "adjClose": 73.522530,
     "volume": 58671200,
     "symbol": "AAPL"
   }
