@@ -8,7 +8,6 @@ function parseCSV(text) {
   });
 }
 
-
 function _transformHistorical(symbol, data) {
   var headings = data.shift();
   return _(data)
@@ -19,7 +18,7 @@ function _transformHistorical(symbol, data) {
         var value = line[i];
         if (_.includes(['Volume'], heading)) {
           value = toInt(value, null);
-        } else if (_.includes(['Open', 'High', 'Low', 'Close'], heading)) {
+        } else if (_.includes(['Open', 'High', 'Low', 'Close', 'Adj Close'], heading)) {
           value = toFloat(value, null);
         } else if (_.includes(['Date'], heading)) {
           value = toDate(value, null);
@@ -82,9 +81,18 @@ function camelize(text) {
     .s;
 }
 
+function parseHistoricalPath(path) {
+  let items = path.split('/');
+  let stocks = items[3].split(',');
+  let start_date = items[4];
+  let end_date = items[5];
+  return {stocks, start_date, end_date};
+}
+
 exports.camelize = camelize;
 exports.parseCSV = parseCSV;
 exports.toDate = toDate;
 exports.toFloat = toFloat;
 exports.toInt = toInt;
 exports._transformHistorical = _transformHistorical;
+exports.parseHistoricalPath = parseHistoricalPath;
