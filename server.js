@@ -23,8 +23,8 @@ function routeHandler(req, res, next) {
 	// console.log(res);
 	googleFinance.historical({
 	  symbol: 'NASDAQ:'+req.path.split('/').pop(),
-	  from: '2014-01-01',
-	  to: '2016-12-31'
+	  from:req.path.split('/').pop()// '2014-01-01',
+	  to: req.path.split('/').pop()//'2016-12-31'
 	}, function (err, quotes) {
 		res.header('Access-Control-Allow-Origin', '*');
 		// res.header = 'Access-Control-Allow-Origin', '*';
