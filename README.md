@@ -43,8 +43,8 @@ Expected Result
       "guid": "tag:finance.google.com,cluster:52779590497806",
       "symbol": "NASDAQ:AAPL",
       "title": "Apple, Inc.'s iPhone 8 Launch Event: What to Expect",
-      "description": "Apple, Inc.'s iPhone 8 Launch Event: What to Expect\n Motley Fool - Aug 29, 2017 \nSet to take place at Apple's new Steve Jobs Theater, located on the campus of the tech giant's new headquarters, the Journal's sources said the event timing or location could be affected if construction of the new Steve Jobs theater doesn't finish on time.\nIs Apple Inc. (AAPL) Stock Setting Up a â€œSell the Newsâ€ Scenario? - Yahoo Finance\nWhy Apple Inc. Won't Ever Release an \"iPhone Pro\" - Madison.com",
-      "summary": "Apple, Inc.'s iPhone 8 Launch Event: What to Expect\n Motley Fool - Aug 29, 2017 \nSet to take place at Apple's new Steve Jobs Theater, located on the campus of the tech giant's new headquarters, the Journal's sources said the event timing or location could be affected if construction of the new Steve Jobs theater doesn't finish on time.\nIs Apple Inc. (AAPL) Stock Setting Up a â€œSell the Newsâ€ Scenario? - Yahoo Finance\nWhy Apple Inc. Won't Ever Release an \"iPhone Pro\" - Madison.com",
+      "description": "Apple, Inc.'s iPhone 8 Launch Event: What to Expect\n Motley Fool - Aug 29, 2017 \nSet to take place at Apple's new Steve Jobs Theater, located on the campus of the tech giant's new headquarters, the Journal's sources said the event timing or location could be affected if construction of the new Steve Jobs theater doesn't finish on time.\nIs Apple Inc. (AAPL) Stock Setting Up a â€œSell the Newsâ€ Scenario? - Yahoo Finance\nWhy Apple Inc. Won't Ever Release an \"iPhone Pro\" - Madison.com",
+      "summary": "Apple, Inc.'s iPhone 8 Launch Event: What to Expect\n Motley Fool - Aug 29, 2017 \nSet to take place at Apple's new Steve Jobs Theater, located on the campus of the tech giant's new headquarters, the Journal's sources said the event timing or location could be affected if construction of the new Steve Jobs theater doesn't finish on time.\nIs Apple Inc. (AAPL) Stock Setting Up a â€œSell the Newsâ€ Scenario? - Yahoo Finance\nWhy Apple Inc. Won't Ever Release an \"iPhone Pro\" - Madison.com",
       "date": "2017-08-29T21:22:30.000Z",
       "link": "https://www.fool.com/investing/2017/08/29/apple-incs-iphone-8-launch-event-what-to-expect.aspx"
     },
@@ -116,7 +116,7 @@ Expected Result
 ```
 
 
-2. Historical Data for single stock (in format: symbol(s)/start_date/end_date, with date in YYYY-MM-DD format).
+2. Historical Data for single or multiple stocks using google (in format: symbol(s)/start_date/end_date, with date in YYYY-MM-DD format).
 
 ```
 GET /v1/historical/NASDAQ:AAPL,NYSE:AIG/2014-01-02/2014-01-03
@@ -167,4 +167,38 @@ Yields Response:
     }
   ]
 }
+```
+
+
+3. Historical Data for single stock using yahoo (in format: symbol/start_date/end_date, with date in YYYY-MM-DD format).
+
+```
+GET /v2/historical/AAPL/2014-01-02/2014-01-04
+```
+
+Yields Response:
+
+```json
+[
+  {
+    "date": "2014-01-03T00:00:00.000Z",
+    "open": 78.980003,
+    "high": 79.099998,
+    "low": 77.204285,
+    "close": 77.28286,
+    "adjClose": "71.907555",
+    "volume": 98116900,
+    "symbol": "AAPL"
+  },
+  {
+    "date": "2014-01-02T00:00:00.000Z",
+    "open": 79.382858,
+    "high": 79.575714,
+    "low": 78.860001,
+    "close": 79.01857,
+    "adjClose": "73.522530",
+    "volume": 58671200,
+    "symbol": "AAPL"
+  }
+]
 ```
