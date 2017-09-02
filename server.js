@@ -1,6 +1,7 @@
 var request = require('request');
 var http = require('http');
 var Router = require('node-router');
+var googleFinance = require('google-finance');
  
 var router = Router();    // create a new Router instance 
 var route = router.push;  // shortcut for router.push() 
@@ -14,13 +15,25 @@ route('GET', '/joke', jokesHandler);         // handle any request to /joke
 route(routeHandler);      // catch-all route 
 route(errorHandler);      // catch errors from any route above 
  
-var server = http.createServer(router).listen(3000);  // launch the server 
+var server = http.createServer(router).listen(3005);  // launch the server 
  
  
 /*Example handler functions*/
 function routeHandler(req, res, next) {
-  if (true) res.send('Hello!');  // respond to request if condition true 
-  else next();                   // otherwise, call next matching route 
+	// console.log(res);
+	googleFinance.historical({
+	  symbol: 'NASDAQ:'+req.path.split('/').pop(),
+	  from: '2014-01-01',
+	  to: '2016-12-31'
+	}, function (err, quotes) {
+		res.header('Access-Control-Allow-Origin', '*');
+		// res.header = 'Access-Control-Allow-Origin', '*';
+		  if (true) res.send(JSON.stringify(quotes));  // respond to request if condition true 
+		  else next();                   // otherwise, call next matching route 
+		console.log(quotes)
+	  //...
+	});
+	
 }
 
 function jokesHandler(req, res, next) {
