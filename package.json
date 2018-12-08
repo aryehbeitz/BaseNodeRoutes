@@ -9,11 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "google-finance": "^0.1.9",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "google-finance": "^0.1.12",
+    "lodash": "^4.17.5",
+    "moment": "^2.19.3",
     "node-router": "^0.1.5",
-    "request": "^2.81.0",
+    "request": "^2.84.0",
     "request-promise-native": "^1.0.4",
     "string": "^3.3.3"
   }
