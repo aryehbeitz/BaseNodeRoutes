@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "google-finance": "^0.1.9",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.11",
     "moment": "^2.18.1",
     "node-router": "^0.1.5",
     "request": "^2.81.0",
